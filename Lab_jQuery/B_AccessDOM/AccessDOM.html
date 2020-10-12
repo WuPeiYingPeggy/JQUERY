@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#btnTry").click(function () {
+        // 在這裏寫程式
+
+        //  ↓選擇器     ↓動作(讀或寫)
+        //$("selector").action(); 先選擇再動作(先選文字再改斜體)
+
+        // $("#report").text("Line1");
+        // $("#report").html("Line1<br>Line2"); //用text <br>會顯示
+
+        // var s = $("#report").text("Line1"); 
+        // console.log(s);   // s 是一個物件
+        // s.css("font-size","2rem");
+
+        // var x = $("#report").text(); //沒有傳資料進去,就會傳資料出來
+        // alert(x);
+
+        // $("#report").append("line1<br>Line2");
+
+        // var s = $("#aTextField").prop("value");
+        // $("#report").append(s);
+
+        // var s = $("#aTextField").prop("value", "Hello!");
+        // $("#report").append(s);
+
+        //                                                            後面checked 改其他值,一樣會執行
+        // var s = $("input[name='radioGroup']").eq(2).prop("checked", "checked");
+        //                                       eq值等於2 ge大於等於  le小於等於  
+        // $("#report").append("radio C selected."); //測試此程式有沒有執行
+
+        // var s = $("input[name='radioGroup']").eq(2).prop("checked");
+        // alert (typeof(s)); //布林值
+        
+        $("input[name='radioGroup']").eq(1).prop("checked", false);//不會勾選
+        // $("input[name='radioGroup']").eq(1).prop("checked", "false");//有值,就是true
+      })
+    });
+  </script>
+</head>
+
+<body>
+
+
+  <div id="report">Report:<br></div>
+
+  <hr>
+
+  <form action="" method="put" onsubmit="return false;">
+    <div>
+      <label>Text:</label> <input type="text" id="aTextField" name="someTextField" />
+    </div>
+    <div>
+      <label>Radio group:</label>
+      <input type="radio" name="radioGroup" id="radioA" value="65" /> A
+      <input type="radio" name="radioGroup" id="radioB" value="66"  checked="checked"/> B
+      <input type="radio" name="radioGroup" id="radioC" value="67" /> C
+    </div>
+    <div>
+      
+      <label>Checkboxes:</label>
+      <input type="checkbox" name="checkboxes" id="checkbox1" value="1" /> 1
+      <input type="checkbox" name="checkboxes" id="checkbox2" value="2" /> 2
+      <input type="checkbox" name="checkboxes" id="checkbox3" value="3" checked="checked" /> 3
+      <input type="checkbox" name="checkboxes" id="checkbox4" value="4" /> 4
+    </div>
+    <button type="button" id="btnTry">Try</button>
+  </form>
+</body>
+
+</html>
