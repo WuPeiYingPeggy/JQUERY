@@ -90,7 +90,7 @@ $(function () {
     })
 
     $("#latestNews li").dblclick(function () {
-        var $li = $(this).detach();
+        var $li = $(this).detach();//remove()差別
         $("#latestNews").append($li);
     })
 

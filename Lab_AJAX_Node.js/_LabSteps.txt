@@ -186,6 +186,7 @@ node app.js
 	
             $("#postButton").on("click", function() {
                 var dataToServer = {
+                                                 // prop("value")
                     firstName: $("#firstNameTextBox").val(),
                     lastName: $("#lastNameTextBox").val()
                 }

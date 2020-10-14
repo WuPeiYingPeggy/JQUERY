@@ -38,10 +38,6 @@
 
 	showToast("Hint", "請點一下正確的圖案");
 
-    var x = $("img").prop("src");
-    if(x*="cat"){
-        showToast("correct", "恭喜答對,我是喵喵");
-    }
 
 <Note> 暫停一下，先別往下看，請想一下程式要怎麼寫: 
 	如果使用者點錯圖片，提示訊息給他(她);
@@ -50,7 +46,7 @@
 
 2.	自訂屬性
 
-
+                            data-species=>自訂標籤
 2.1	針對 imgDog 那張圖，加上 data-species="狗" 屬性，像這樣:
         <div class="col-sm-4">
             <img 
@@ -71,6 +67,7 @@
     showToast("Hint", "請點一下正確的圖案");
 
     $(".pet").click(function () {
+        //var s = $(this).prop("src")轉化成↓↓
         var species = $(this).data("species");
         showToast("Hint", "我是" + species)
     });
@@ -133,6 +130,8 @@
             showToast("Note", "答對了! XD");
             $("#imgDog").fadeTo("fast", 0.50);
             $("#imgRabbit").fadeTo("fast", 0.50);
+            //$(".pet[data-score='0']").fadeTo("fast", 0.50);
+            //當用九宮格時
         }
     });
 
@@ -151,7 +150,7 @@
 4.1	如果 Lab 的這三張圖片沒有寫 id, 
 	如何將下列的陣列內容各項目一一指定給各張圖片的 data-species?
 
-	var speciesList = ["狗狗", "貓", "兔兔"];;
+	var speciesList = ["狗狗", "貓", "兔兔"];
 
 
 4.2 寫法一:
@@ -165,6 +164,7 @@
 
     var speciesList = ["狗狗", "貓", "兔兔"];
     for (var i = 0; i < speciesList.length; i++) {
+        //var filter = ".pet:eq(0)"; 先寫死
         var filter = ".pet:eq(" + i + ")";
         $(filter).data("species", speciesList[i]);
     }
@@ -182,6 +182,7 @@
 
     var speciesList = ["狗狗", "貓", "兔兔"];
     $(".pet").each(function (key, obj) {
+        //先 alert(key),alert(obj) 看是什麼
         $(obj).data("species", speciesList[key]);
     })
 

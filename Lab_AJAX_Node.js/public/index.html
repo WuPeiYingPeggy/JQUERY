@@ -143,10 +143,14 @@
                     lastName: $("#lastNameTextBox").val()
                 }
 
-
-
-
-                $("#resultSpan").text(JSON.stringify(dataToServer));
+                $.ajax({
+                    type:"post",
+                    url:"/test",
+                    contentType:"application/json",
+                    data: JSON.stringify(dataToServer)
+                }).then(function(dataFromServer){
+                    $("#resultSpan").text(dataFromServer + "--take22");
+                })
             })
 
 

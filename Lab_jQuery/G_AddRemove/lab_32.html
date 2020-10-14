@@ -80,6 +80,7 @@ $(function () {
 
     $.each(newsList, function (key, obj) {
         var newsText = obj.title + " [" + obj.ymd + "]";
+        //可以利用$ 創造一個新的元素<li>
         var $li = $("<li></li>")
                     .text(newsText)
                     .addClass("list-group-item");

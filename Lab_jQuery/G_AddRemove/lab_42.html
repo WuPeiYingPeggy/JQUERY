@@ -69,8 +69,9 @@ $(function () {
 
     // Lab 程式:
 
-    // $("#latestNews").empty();
-    $("#latestNews li").remove()
+    // $("#latestNews").empty();//外面的容器,裡面全部清空
+    $("#latestNews li").remove()//容器裡面的li,一次移除
+    //$("#latestNews").remove()//error!!把容器移除
 
     var newsList =
         [

@@ -128,7 +128,15 @@
 
             $("#getButton").on("click", function() {
                 var s = $("#nameTextBox").val();
+                
+                //$.get(url,how) get的用法
+                //v1
+                // let url = "/hello/" + s
+                // $.get(url), function(e) {
+                //     $("#reportSpan").text(e);
+                // })
 
+                // v2
                 $.get("/hello/" + s, function(e) {
                     $("#reportSpan").text(e);
                 })
@@ -148,7 +156,7 @@
             //         }
             //     )
             // })
-
+            //$.post("url", data, then<how> )
 
             $("#postButton").on("click", function() {
                 var dataToServer = {
@@ -156,10 +164,12 @@
                     lastName: $("#lastNameTextBox").val()
                 }
 
+
                 $.ajax({
                     type: "post",
                     url: "/test",
-                    data: JSON.stringify(dataToServer),
+                    data: JSON.stringify(dataToServer),//{"firstName":"wolf",...}
+                    //data: dataToServer // firstName=wolf&lastName=Chein
                     contentType: "application/json",
                     success: function(e) {
                         $("#resultSpan").text(e);
