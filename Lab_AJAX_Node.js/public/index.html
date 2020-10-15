@@ -132,7 +132,9 @@
 
 
 
-                $("#reportSpan").text(s);
+                $.get("/hello/" + s, function(e) {
+                    $("#reportSpan").text(e);
+                })
             })
 
 

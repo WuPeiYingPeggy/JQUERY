@@ -183,7 +183,12 @@ $(function () {
         })
 
         $(".deleteItem").click(function () {
-            var iIndex = $(this).closest("li").index();
+
+            // var iIndex = $(this).index(); //1
+            var iIndex = $(this).closest("li").index();//0 1 2 3
+            //先測試
+            //alert (iIndex);
+
             $.ajax({
                 type: "delete",
                 url: "/home/news",

@@ -6,3 +6,53 @@ Lab_AJAX_Node.js\_LabSteps.txt
 
 
 
+******!!!!!Lab_Integrated 前後端整合API******!!!!!!
+一  新聞列
+先get 陣列
+append到li
+加上編輯船按鈕
+
+
+二 新增按鈕 彈出新視窗
+找到新增按鈕id 給click事件
+alert 測試
+取消  $("#newsModal").modal( { backdrop: "static" } );
+
+三 新增資料
+按完ok按鈕 新增input的值
+*title ymd 在app.js定義的
+用ajax post拿到資料,放到url
+then  show出資料
+
+
+四 刪除按鈕
+先想要放在哪裡(哪個function,或外面) **放外面不行,因為JQ是平行處理
+要先有"刪除按扭"出來再寫
+按哪一個刪除哪一個li
+利用index 抓陣列第幾個
+alert index都是1
+看一下結構 因為包在span裡面的第[1]
+利用closest (parent )
+用altert方式測試 有沒有抓到正確的index
+用ajax 交換資料 then 下載刷新資料
+
+五 編輯按鈕
+先想要放在哪裡(哪個function,或外面)
+要先有"刪除按扭"出來再寫
+按哪一個刪除哪一個li
+利用index 抓陣列第幾個
+alert index都是1
+看一下結構 因為包在span裡面的第[1]
+利用closest (parent )
+用altert方式測試 有沒有抓到正確的index
+
+點擊哪一個li input會有預設值
+按下ok btn應該要修改資料,但卻新增一筆資料(因為okbutton 還沒改)
+判斷是從新增按鈕 或修改按鈕近來
+給新增按鈕一個空index ==> var currentIndex = -1
+抓取編輯按鈕的 index
+
+
+點擊新增按鈕也會帶出預設值,
+把input 值改成空字串
+
